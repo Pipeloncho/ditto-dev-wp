@@ -87,9 +87,13 @@ function ditto_settings_page() {
 <?php global $ditto_settings; ?>
 <div class="ditto-admin-wrap">
 
-	<div class="admin-header" style="display: flex;">
-		<img src="<?php echo plugins_url('images/logo.svg',__FILE__ ) ?>" width="100px">
-		<h1 style="margin-bottom: 50px; font-size: 36px; color: #46a699; margin-left: 20px;"><?php echo $ditto_settings['admin_title']; ?></h1>
+	<div class="admin-header" style="display: flex; margin-top: 40px; margin-bottom: 50px;">
+		<?php if ($ditto_settings['admin_logo']): ?>
+			<div class="ditto_logo" style="margin-right: 20px; align-self: center;">
+				<img src="<?php echo $ditto_settings['admin_logo'] ?>" width="100px">
+			</div>
+		<?php endif ?>
+		<h1 style="margin-top: 0px; margin-bottom: 0px; font-size: 36px; color: #46a699; align-self: center;"><?php echo $ditto_settings['admin_title']; ?></h1>
 	</div>
 
 	<form method="post" action="options.php">
@@ -243,7 +247,7 @@ function ditto_settings_page() {
 					</label>
 				</div>
 	    	</div>
-	    	<div class="gutenberg-switch" style="width: 20%">
+	    	<!-- <div class="gutenberg-switch" style="width: 20%">
 	    		<label>Hide ditto Plugin</label>
 	    		<div class="switch" style="margin-top: 10px;">
 					<label>
@@ -253,7 +257,7 @@ function ditto_settings_page() {
 						On
 					</label>
 				</div>
-	    	</div>
+	    	</div> -->
 	    </div>
 
 	    <?php ditto_image_uploader( 'custom_image', $width = 115, $height = 115 ); ?>

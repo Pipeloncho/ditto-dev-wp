@@ -14,9 +14,11 @@ global $ditto_settings;
 // WP menu title
 $ditto_settings['wp_menu_title'] = "Ditto Settings";
 // WP menu icon (20x20 px)
-$ditto_settings['wp_menu_icon'] = plugins_url('/images/icon.png', __FILE__);
+$ditto_settings['wp_menu_icon'] = plugins_url('/images/ditto_icon.png', __FILE__);
 // Admin title
 $ditto_settings['admin_title'] = "Ditto Dev Options";
+// Admin logo
+$ditto_settings['admin_logo'] = plugins_url('/images/ditto_default_logo.png', __FILE__);
 
 /**** -Ditto Dev Settings ****/
 

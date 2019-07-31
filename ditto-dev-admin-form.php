@@ -48,7 +48,7 @@ function register_ditto_plugin_settings() {
 	register_setting( 'ditto-settings-group', 'ditto_hide_me_switch' );
 }
 
-function ditto_image_uploader( $name, $width, $height ) {
+function ditto_image_uploader($width, $height ) {
 
     $default_image = plugins_url('images/login_default.svg', __FILE__);
 
@@ -260,7 +260,7 @@ function ditto_settings_page() {
 	    	</div> -->
 	    </div>
 
-	    <?php ditto_image_uploader( 'custom_image', $width = 115, $height = 115 ); ?>
+	    <?php ditto_image_uploader( $width = 115, $height = 115 ); ?>
 
 	    <button class="btn waves-effect waves-light" type="submit" name="submit" id="submit" style="margin-top: 40px;">
 	    	Save Changes

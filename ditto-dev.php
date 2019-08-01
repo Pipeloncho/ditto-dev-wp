@@ -32,6 +32,7 @@ global $ditto_settings;
 include_once "ditto-dev-settings.php";
 include_once "ditto-dev-main-menu.php";
 include_once "ditto-dev-analytics-submenu.php";
+include_once "ditto-dev-maps-submenu.php";
 include_once "ditto-dev-actions.php";
 
 // .------..------..------..------..------.

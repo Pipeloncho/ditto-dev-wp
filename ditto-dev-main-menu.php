@@ -45,8 +45,6 @@ function ditto_settings_page() {
 
 	    <?php settings_fields( 'ditto-settings-group' ); ?>
 	    <?php do_settings_sections( 'ditto-settings-group' ); ?>
-	    <?php $checked_gm = ''; ?>
-	    <?php if (get_option('ditto_google_maps_switch')) { $checked_gm = 'checked'; } ?>
 	    <?php $checked_owl = ''; ?>
 	    <?php if (get_option('ditto_owl_switch')) { $checked_owl = 'checked'; } ?>
 	    <?php $checked_slick = ''; ?>
@@ -78,25 +76,9 @@ function ditto_settings_page() {
 					</label>
 				</div>
 	    	</div>
-	    	<div class="gm-switch" style="width: 20%">
-	    		<label>Enable Google Maps API</label>
-	    		<div class="switch" style="margin-top: 10px;">
-					<label>
-						Off
-						<input type="checkbox" name="ditto_google_maps_switch" <?php echo $checked_gm; ?>>
-						<span class="lever"></span>
-						On
-					</label>
-				</div>
-	    	</div>
-	    	<div class="gm-api-key input-field" style="width: 60%">
-	    		<label>Google Maps API Key</label>
-	    		<input type="text" name="ditto_google_maps_api_key" value="<?php echo esc_attr( get_option('ditto_google_maps_api_key') ); ?>" />
-	    		<span class="helper-text">Dev Key: AIzaSyBB9ZwnBWmSvxcLLeyz-EEmhG9DBZHP004</span>
-	    	</div>
 	    </div>
 
-	    <div class="sliders-options" style="display: flex; margin-top: 10px;">
+	    <div class="sliders-options" style="display: flex; margin-top: 40px;">
 	    	<div class="owl-switch" style="width: 20%">
 	    		<label>Owl Carousel</label>
 	    		<div class="switch" style="margin-top: 10px;">

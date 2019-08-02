@@ -1,1 +1,11 @@
-/* SMK Custom CSS */
+/* Ditto Custom CSS */
+.form-control:focus, .wpcf7 .wpcf7-validation-errors:focus, .wpcf7 input:focus[type=color], .wpcf7 input:focus[type=date], .wpcf7 input:focus[type=datetime-local], .wpcf7 input:focus[type=datetime], .wpcf7 input:focus[type=email], .wpcf7 input:focus[type=file], .wpcf7 input:focus[type=month], .wpcf7 input:focus[type=number], .wpcf7 input:focus[type=range], .wpcf7 input:focus[type=search], .wpcf7 input:focus[type=submit], .wpcf7 input:focus[type=tel], .wpcf7 input:focus[type=text], .wpcf7 input:focus[type=time], .wpcf7 input:focus[type=url], .wpcf7 input:focus[type=week], .wpcf7 select:focus, .wpcf7 textarea:focus {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+* div{
+    -webkit-font-smoothing: antialiased !important;
+}
+* button, * input{
+	outline: none !important;
+}

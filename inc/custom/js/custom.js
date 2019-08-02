@@ -1,1 +1,5 @@
-/* SMK Custom JS */
+/* Ditto Custom JS */
+
+(function($) {
+	// Code
+})(jQuery);

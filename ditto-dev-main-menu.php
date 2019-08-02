@@ -15,7 +15,7 @@ function ditto_image_uploader($width, $height ) {
 
     // Print HTML field
     echo '
-        <div class="upload" style="margin-top: 30px;">
+        <div class="upload">
             <img data-src="' . $default_image . '" src="' . $src . '" width="' . $width . 'px" height="' . $height . 'px" />
             <div>
                 <input type="hidden" name="ditto_login_image_src" value="' . $value . '" />
@@ -65,11 +65,13 @@ function ditto_settings_page() {
 	    <?php if (get_option('ditto_duplicator_switch')) { $checked_duplicator = 'checked'; } ?>
 	    <?php $checked_user_agent = ''; ?>
 	    <?php if (get_option('ditto_user_agent_switch')) { $checked_user_agent = 'checked'; } ?>
+	    <?php $checked_hide_acf = ''; ?>
+	    <?php if (get_option('ditto_hide_acf')) { $checked_hide_acf = 'checked'; } ?>
 	    <?php $checked_hide_me = ''; ?>
 	    <?php if (get_option('ditto_hide_me_switch')) { $checked_hide_me = 'checked'; } ?>
 
-	    <div class="api-options" style="display: flex;">
-	    	<div class="vimeo-switch" style="width: 20%">
+	    <div class="api-options row">
+	    	<div class="vimeo-switch owl-switch col s12">
 	    		<label>Enable Vimeo API</label>
 	    		<div class="switch" style="margin-top: 10px;">
 					<label>
@@ -82,8 +84,10 @@ function ditto_settings_page() {
 	    	</div>
 	    </div>
 
-	    <div class="sliders-options" style="display: flex; margin-top: 40px;">
-	    	<div class="owl-switch" style="width: 20%">
+	    <div class="divider" style="margin-top: 30px; margin-bottom: 20px;"></div>
+
+	    <div class="sliders-options row">
+	    	<div class="owl-switch col s6 m2" style="">
 	    		<label>Owl Carousel</label>
 	    		<div class="switch" style="margin-top: 10px;">
 					<label>
@@ -97,7 +101,7 @@ function ditto_settings_page() {
 					</span>
 				</div>
 	    	</div>
-	    	<div class="owl-switch" style="width: 20%">
+	    	<div class="slick-switch col s6 m2">
 	    		<label>Slick Slider</label>
 	    		<div class="switch" style="margin-top: 10px;">
 					<label>
@@ -111,7 +115,7 @@ function ditto_settings_page() {
 					</span>
 				</div>
 	    	</div>
-	    	<div class="materialize-switch" style="width: 20%">
+	    	<div class="materialize-switch col s6 m2">
 	    		<label>Materialize</label>
 	    		<div class="switch" style="margin-top: 10px;">
 					<label>
@@ -125,7 +129,7 @@ function ditto_settings_page() {
 					<a href="https://materializecss.com/" target="_BLANK">Webpage</a>
 				</span>
 	    	</div>
-	    	<div class="materialize-switch" style="width: 20%">
+	    	<div class="listjs-switch col s6 m2">
 	    		<label>List JS</label>
 	    		<div class="switch" style="margin-top: 10px;">
 					<label>
@@ -141,8 +145,10 @@ function ditto_settings_page() {
 	    	</div>
 	    </div>
 
-	    <div class="custom-css-js-options" style="display: flex; margin-top: 30px;">
-	    	<div class="custom-css-switch" style="width: 20%">
+	    <div class="divider" style="margin-top: 30px; margin-bottom: 20px;"></div>
+
+	    <div class="custom-css-js-options row">
+	    	<div class="custom-css-switch col s6 m2">
 	    		<label>Include Custom CSS</label>
 	    		<div class="switch" style="margin-top: 10px;">
 					<label>
@@ -153,7 +159,7 @@ function ditto_settings_page() {
 					</label>
 				</div>
 	    	</div>
-	    	<div class="custom-js-switch" style="width: 20%">
+	    	<div class="custom-js-switch col s6 m2">
 	    		<label>Include Custom JS</label>
 	    		<div class="switch" style="margin-top: 10px;">
 					<label>
@@ -166,8 +172,10 @@ function ditto_settings_page() {
 	    	</div>
 	    </div>
 
-	    <div class="gutenberg-options" style="display: flex; margin-top: 40px;">
-	    	<div class="gutenberg-switch" style="width: 20%">
+	    <div class="divider" style="margin-top: 30px; margin-bottom: 20px;"></div>
+
+	    <div class="gutenberg-options row">
+	    	<div class="gutenberg-switch col s6 m2">
 	    		<label>Disable Gutenberg Editor</label>
 	    		<div class="switch" style="margin-top: 10px;">
 					<label>
@@ -178,7 +186,7 @@ function ditto_settings_page() {
 					</label>
 				</div>
 	    	</div>
-	    	<div class="duplicator-switch" style="width: 20%">
+	    	<div class="duplicator-switch col s6 m2">
 	    		<label>Duplicate Post Option</label>
 	    		<div class="switch" style="margin-top: 10px;">
 					<label>
@@ -189,12 +197,23 @@ function ditto_settings_page() {
 					</label>
 				</div>
 	    	</div>
-	    	<div class="duplicator-switch" style="width: 20%">
+	    	<div class="duplicator-switch col s6 m2">
 	    		<label>User Agent Attributes</label>
 	    		<div class="switch" style="margin-top: 10px;">
 					<label>
 						Off
 						<input type="checkbox" name="ditto_user_agent_switch" <?php echo $checked_user_agent; ?>>
+						<span class="lever"></span>
+						On
+					</label>
+				</div>
+	    	</div>
+	    	<div class="duplicator-switch col s6 m2">
+	    		<label>Hide ACF Admin</label>
+	    		<div class="switch" style="margin-top: 10px;">
+					<label>
+						Off
+						<input type="checkbox" name="ditto_hide_acf" <?php echo $checked_hide_acf; ?>>
 						<span class="lever"></span>
 						On
 					</label>
@@ -212,6 +231,8 @@ function ditto_settings_page() {
 				</div>
 	    	</div> -->
 	    </div>
+
+	    <div class="divider" style="margin-top: 30px; margin-bottom: 20px;"></div>
 
 	    <?php ditto_image_uploader( $width = 115, $height = 115 ); ?>
 

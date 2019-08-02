@@ -13,8 +13,8 @@ function ditto_maps_page() { ?>
 		    <?php do_settings_sections( 'ditto-settings-maps-group' ); ?>
 		    <?php $checked_gm = ''; ?>
 	    	<?php if (get_option('ditto_google_maps_switch')) { $checked_gm = 'checked'; } ?>
-			<div class="api-options" style="display: flex;">
-		    	<div class="gm-switch" style="width: 20%">
+			<div class="api-options row">
+		    	<div class="gm-switch col s12 m2">
 		    		<label>Enable Google Maps API</label>
 		    		<div class="switch" style="margin-top: 10px;">
 						<label>
@@ -25,20 +25,25 @@ function ditto_maps_page() { ?>
 						</label>
 					</div>
 		    	</div>
-		    	<div class="gm-api-key input-field" style="width: 80%">
-		    		<label>Google Maps API Key</label>
-		    		<input type="text" name="ditto_google_maps_api_key" value="<?php echo esc_attr( get_option('ditto_google_maps_api_key') ); ?>" />
-		    		<span class="helper-text">Dev Key: AIzaSyBB9ZwnBWmSvxcLLeyz-EEmhG9DBZHP004</span>
+		    	<div class="gm-api-key col s12 m10">
+			    	<div class="input-field">
+			    		<label>Google Maps API Key</label>
+			    		<input type="text" name="ditto_google_maps_api_key" value="<?php echo esc_attr( get_option('ditto_google_maps_api_key') ); ?>" />
+			    		<span class="helper-text">Dev Key: AIzaSyBB9ZwnBWmSvxcLLeyz-EEmhG9DBZHP004</span>
+			    	</div>
 		    	</div>
 		    </div>
 
-		    <div class="maps-styles input-field" style="margin-top: 30px;">
-		    	<textarea id="textarea_snazzy_maps" class="materialize-textarea" name="ditto_google_maps_snazzy_maps"><?php echo esc_attr( get_option('ditto_google_maps_snazzy_maps') ); ?></textarea>
-		    	<label for="textarea_snazzy_maps">Snazzy Maps Json</label>
-		    	<span class="helper-text" style="display: block;">
-					<a href="https://snazzymaps.com/" target="_BLANK">Webpage</a>
-				</span>
+		    <div class="maps-styles col s12" style="margin-top: 30px;">
+		    	<div class="input-field">
+			    	<textarea id="textarea_snazzy_maps" class="materialize-textarea" name="ditto_google_maps_snazzy_maps"><?php echo esc_attr( get_option('ditto_google_maps_snazzy_maps') ); ?></textarea>
+			    	<label for="textarea_snazzy_maps">Snazzy Maps Json</label>
+			    	<span class="helper-text" style="display: block;">
+						<a href="https://snazzymaps.com/" target="_BLANK">Webpage</a>
+					</span>
+			    </div>
 		    </div>
+		    
 
 		    <button class="btn waves-effect waves-light" type="submit" name="submit" id="submit" style="margin-top: 40px;">
 		    	Save Changes

@@ -1,4 +1,55 @@
 <?php
+
+/*** +Map Shortcode ***/
+function simple_map_shortcode( $atts ) {
+   $map = '
+   		<div id="'.$atts['map_id'].'" style="height: '.$atts['height'].';"></div>
+   		<script type="text/javascript">
+		    let GoogleMaps_'.$atts['map_id'].' = {
+		        $html: jQuery("html, body"),
+		        $map: jQuery('.$atts['map_id'].'),
+		        init: function () {
+		            if (this.$map.length) {
+		                this.initMap();
+		            }
+		        },
+		        initMap: function () {
+		            this.map = new google.maps.Map(this.$map[0], {
+		                zoom: 16,
+		                center: new google.maps.LatLng('.$atts['map_lat'].', '.$atts['map_lng'].'),
+		                styles: "",
+		                disableDefaultUI: true,
+		                scrollwheel: false,
+		                zoomControl: false,
+		                zoomControlOptions: {
+				            position: google.maps.ControlPosition.LEFT_BOTTOM
+				        }
+		            });
+		            this.setMarkers();
+		        },
+		        setMarkers: function () {
+		            let self = this;
+		            marker = new google.maps.Marker({
+		                position: new google.maps.LatLng('.$atts['map_lat'].', '.$atts['map_lng'].'),
+		                map: this.map,
+		                id: 0,
+		                /*icon: {
+		                	url: "",
+		                	scaledSize: new google.maps.Size(30, 40)
+		                }*/
+		            });
+		        }
+		    };
+		    GoogleMaps'.$atts['map_id'].'.init();
+   		</script>
+   '; 
+   return $map;
+}
+
+add_shortcode('simple_map', 'simple_map_shortcode');
+/*** -Map Shortcode ***/
+
+/*** +Map Form ***/
 function ditto_maps_page() { ?>
 	<div class="ditto-maps-wrap" style="padding: 0px 30px 0px 10px;">
 		<div class="admin-header" style="display: flex; margin-top: 40px; margin-bottom: 50px;">
@@ -59,11 +110,11 @@ function ditto_maps_page() { ?>
 				Ditto Plugin V1.1
 			</div>
 		</div>
-		<!-- <pre> -->
-			<?php //print_r(get_plugin_data(plugins_url('ditto-dev.php', __FILE__), true, true)) ?>
-		<!-- </pre> -->
-		<?php //echo plugins_url('ditto-dev.php', __FILE__) ?>
+		<?php //echo do_shortcode('[simple_map map_id="map_test" height="200px" map_lat="300.0000" map_lng="75.70899"]'); ?>
+
 	</div>  
 <?php
 }
+/*** -Map Form ***/
+
 ?>

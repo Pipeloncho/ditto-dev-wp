@@ -32,8 +32,9 @@ function ditto_maps_page() { ?>
 		    	</div>
 		    </div>
 
-		    <div class="maps-styles">
-		    	<textarea></textarea>
+		    <div class="maps-styles input-field" style="margin-top: 30px; display: flex;">
+		    	<textarea id="textarea_snazzy_maps" class="materialize-textarea" name="ditto_google_maps_snazzy_maps" style="width: 50%;"><?php echo esc_attr( get_option('ditto_google_maps_snazzy_maps') ); ?></textarea>
+		    	<label for="textarea_snazzy_maps">Snazzy Maps</label>
 		    </div>
 
 		    <button class="btn waves-effect waves-light" type="submit" name="submit" id="submit" style="margin-top: 40px;">
@@ -50,10 +51,10 @@ function ditto_maps_page() { ?>
 				Ditto Plugin V1.1
 			</div>
 		</div>
-		<pre>
-			<?php print_r(get_plugin_data(plugins_url('ditto-dev.php', __FILE__), true, true)) ?>
-		</pre>
-		<?php echo plugins_url('ditto-dev.php', __FILE__) ?>
+		<!-- <pre> -->
+			<?php //print_r(get_plugin_data(plugins_url('ditto-dev.php', __FILE__), true, true)) ?>
+		<!-- </pre> -->
+		<?php //echo plugins_url('ditto-dev.php', __FILE__) ?>
 	</div>  
 <?php
 }

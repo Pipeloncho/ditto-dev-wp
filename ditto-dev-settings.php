@@ -24,10 +24,12 @@ if ( is_admin() && !get_option('ditto_hide_me_switch') ){
 
 function ditto_plugin_create_menu() {
 	global $ditto_settings;
+	
 	//create new top-level menu
 	add_menu_page($ditto_settings['wp_title_page'], $ditto_settings['wp_menu_title'], 'administrator', __FILE__, 'ditto_settings_page' , $ditto_settings['wp_menu_icon'] );
-	add_submenu_page( __FILE__, 'Google Analytics', 'Analytics', 'manage_options', __FILE__.'analytics', 'ditto_analytics_page');
+	//add_submenu_page( __FILE__, 'Google Analytics', 'Analytics', 'manage_options', __FILE__.'analytics', 'ditto_analytics_page');
 	add_submenu_page( __FILE__, 'Google Maps', 'Maps', 'manage_options', __FILE__.'maps', 'ditto_maps_page');
+
 	//call register settings function
 	add_action( 'admin_init', 'register_ditto_plugin_settings' );
 }
@@ -36,6 +38,7 @@ function register_ditto_plugin_settings() {
 	//register our settings
 	register_setting( 'ditto-settings-group', 'ditto_google_maps_switch' );
 	register_setting( 'ditto-settings-group', 'ditto_google_maps_api_key' );
+	register_setting( 'ditto-settings-group', 'ditto_google_maps_snazzy_maps' );
 	register_setting( 'ditto-settings-group', 'ditto_owl_switch' );
 	register_setting( 'ditto-settings-group', 'ditto_slick_switch' );
 	register_setting( 'ditto-settings-group', 'ditto_gutenberg_switch' );

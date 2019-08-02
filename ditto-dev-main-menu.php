@@ -30,7 +30,7 @@ function ditto_image_uploader($width, $height ) {
 function ditto_settings_page() {
 ?>
 <?php global $ditto_settings; ?>
-<div class="ditto-admin-wrap">
+<div class="ditto-admin-wrap" style="padding: 0px 30px 0px 10px;">
 
 	<div class="admin-header" style="display: flex; margin-top: 40px; margin-bottom: 50px;">
 		<?php if ($ditto_settings['admin_logo']): ?>
@@ -63,6 +63,8 @@ function ditto_settings_page() {
 	    <?php if (get_option('ditto_list_switch')) { $checked_list = 'checked'; } ?>
 	    <?php $checked_duplicator = ''; ?>
 	    <?php if (get_option('ditto_duplicator_switch')) { $checked_duplicator = 'checked'; } ?>
+	    <?php $checked_user_agent = ''; ?>
+	    <?php if (get_option('ditto_user_agent_switch')) { $checked_user_agent = 'checked'; } ?>
 	    <?php $checked_hide_me = ''; ?>
 	    <?php if (get_option('ditto_hide_me_switch')) { $checked_hide_me = 'checked'; } ?>
 
@@ -164,9 +166,20 @@ function ditto_settings_page() {
 	    	</div>
 	    </div>
 
-	    <div class="duplicator-options" style="display: flex; margin-top: 40px;">
+	    <div class="gutenberg-options" style="display: flex; margin-top: 40px;">
+	    	<div class="gutenberg-switch" style="width: 20%">
+	    		<label>Disable Gutenberg Editor</label>
+	    		<div class="switch" style="margin-top: 10px;">
+					<label>
+						Off
+						<input type="checkbox" name="ditto_gutenberg_switch" <?php echo $checked_gutenberg; ?>>
+						<span class="lever"></span>
+						On
+					</label>
+				</div>
+	    	</div>
 	    	<div class="duplicator-switch" style="width: 20%">
-	    		<label>Duplicate Post</label>
+	    		<label>Duplicate Post Option</label>
 	    		<div class="switch" style="margin-top: 10px;">
 					<label>
 						Off
@@ -176,20 +189,12 @@ function ditto_settings_page() {
 					</label>
 				</div>
 	    	</div>
-	    	<div class="duplicator-elements input-field" style="width: 80%">
-	    		<label>Add Custom Post Slug</label>
-	    		<input type="text" name="ditto_duplicator_elements" value="<?php echo esc_attr( get_option('ditto_duplicator_elements') ); ?>" />
-	    		<span class="helper-text">Add more than one slug separated by comma.</span>
-	    	</div>
-	    </div>
-
-	    <div class="gutenberg-options" style="display: flex; margin-top: 20px;">
-	    	<div class="gutenberg-switch" style="width: 20%">
-	    		<label>Disable Gutenberg Editor</label>
+	    	<div class="duplicator-switch" style="width: 20%">
+	    		<label>User Agent Attributes</label>
 	    		<div class="switch" style="margin-top: 10px;">
 					<label>
 						Off
-						<input type="checkbox" name="ditto_gutenberg_switch" <?php echo $checked_gutenberg; ?>>
+						<input type="checkbox" name="ditto_user_agent_switch" <?php echo $checked_user_agent; ?>>
 						<span class="lever"></span>
 						On
 					</label>

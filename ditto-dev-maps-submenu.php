@@ -1,6 +1,6 @@
 <?php
 function ditto_maps_page() { ?>
-	<div class="ditto-maps-wrap">
+	<div class="ditto-maps-wrap" style="padding: 0px 30px 0px 10px;">
 		<div class="admin-header" style="display: flex; margin-top: 40px; margin-bottom: 50px;">
 			<h1 style="margin-top: 0px; margin-bottom: 0px; font-size: 36px; color: #46a699; align-self: center;">
 				Google Maps Settings
@@ -32,9 +32,12 @@ function ditto_maps_page() { ?>
 		    	</div>
 		    </div>
 
-		    <div class="maps-styles input-field" style="margin-top: 30px; display: flex;">
-		    	<textarea id="textarea_snazzy_maps" class="materialize-textarea" name="ditto_google_maps_snazzy_maps" style="width: 50%;"><?php echo esc_attr( get_option('ditto_google_maps_snazzy_maps') ); ?></textarea>
+		    <div class="maps-styles input-field" style="margin-top: 30px;">
+		    	<textarea id="textarea_snazzy_maps" class="materialize-textarea" name="ditto_google_maps_snazzy_maps"><?php echo esc_attr( get_option('ditto_google_maps_snazzy_maps') ); ?></textarea>
 		    	<label for="textarea_snazzy_maps">Snazzy Maps Json</label>
+		    	<span class="helper-text" style="display: block;">
+					<a href="https://snazzymaps.com/" target="_BLANK">Webpage</a>
+				</span>
 		    </div>
 
 		    <button class="btn waves-effect waves-light" type="submit" name="submit" id="submit" style="margin-top: 40px;">

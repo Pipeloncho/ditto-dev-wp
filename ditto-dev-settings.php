@@ -35,7 +35,7 @@ function ditto_plugin_create_menu() {
 }
 
 function register_ditto_plugin_settings() {
-	//register our settings
+	//register main menu settings
 	register_setting( 'ditto-settings-main-group', 'ditto_owl_switch' );
 	register_setting( 'ditto-settings-main-group', 'ditto_slick_switch' );
 	register_setting( 'ditto-settings-main-group', 'ditto_gutenberg_switch' );
@@ -46,9 +46,10 @@ function register_ditto_plugin_settings() {
 	register_setting( 'ditto-settings-main-group', 'ditto_list_switch' );
 	register_setting( 'ditto-settings-main-group', 'ditto_login_image_src' );
 	register_setting( 'ditto-settings-main-group', 'ditto_duplicator_switch' );
-	register_setting( 'ditto-settings-main-group', 'ditto_duplicator_elements' );
+	register_setting( 'ditto-settings-main-group', 'ditto_user_agent_switch' );
 	register_setting( 'ditto-settings-main-group', 'ditto_hide_me_switch' );
 
+	//register maps menu settings
 	register_setting( 'ditto-settings-maps-group', 'ditto_google_maps_switch' );
 	register_setting( 'ditto-settings-maps-group', 'ditto_google_maps_api_key' );
 	register_setting( 'ditto-settings-maps-group', 'ditto_google_maps_snazzy_maps' );

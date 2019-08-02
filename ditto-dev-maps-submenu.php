@@ -9,8 +9,8 @@ function ditto_maps_page() { ?>
 
 		<form method="post" action="options.php">
 
-		    <?php settings_fields( 'ditto-settings-group' ); ?>
-		    <?php do_settings_sections( 'ditto-settings-group' ); ?>
+		    <?php settings_fields( 'ditto-settings-maps-group' ); ?>
+		    <?php do_settings_sections( 'ditto-settings-maps-group' ); ?>
 		    <?php $checked_gm = ''; ?>
 	    	<?php if (get_option('ditto_google_maps_switch')) { $checked_gm = 'checked'; } ?>
 			<div class="api-options" style="display: flex;">
@@ -34,7 +34,7 @@ function ditto_maps_page() { ?>
 
 		    <div class="maps-styles input-field" style="margin-top: 30px; display: flex;">
 		    	<textarea id="textarea_snazzy_maps" class="materialize-textarea" name="ditto_google_maps_snazzy_maps" style="width: 50%;"><?php echo esc_attr( get_option('ditto_google_maps_snazzy_maps') ); ?></textarea>
-		    	<label for="textarea_snazzy_maps">Snazzy Maps</label>
+		    	<label for="textarea_snazzy_maps">Snazzy Maps Json</label>
 		    </div>
 
 		    <button class="btn waves-effect waves-light" type="submit" name="submit" id="submit" style="margin-top: 40px;">

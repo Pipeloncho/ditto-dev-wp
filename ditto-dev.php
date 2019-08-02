@@ -34,6 +34,7 @@ include_once "ditto-dev-main-menu.php";
 include_once "ditto-dev-analytics-submenu.php";
 include_once "ditto-dev-maps-submenu.php";
 include_once "ditto-dev-actions.php";
+include_once "ditto-dev-post-duplicator.php";
 
 // .------..------..------..------..------.
 // |D.--. ||I.--. ||T.--. ||T.--. ||O.--. |

@@ -36,19 +36,22 @@ function ditto_plugin_create_menu() {
 
 function register_ditto_plugin_settings() {
 	//register our settings
-	register_setting( 'ditto-settings-group', 'ditto_google_maps_switch' );
-	register_setting( 'ditto-settings-group', 'ditto_google_maps_api_key' );
-	register_setting( 'ditto-settings-group', 'ditto_google_maps_snazzy_maps' );
-	register_setting( 'ditto-settings-group', 'ditto_owl_switch' );
-	register_setting( 'ditto-settings-group', 'ditto_slick_switch' );
-	register_setting( 'ditto-settings-group', 'ditto_gutenberg_switch' );
-	register_setting( 'ditto-settings-group', 'ditto_custom_css_switch' );
-	register_setting( 'ditto-settings-group', 'ditto_custom_js_switch' );
-	register_setting( 'ditto-settings-group', 'ditto_materialize_switch' );
-	register_setting( 'ditto-settings-group', 'ditto_vimeo_switch' );
-	register_setting( 'ditto-settings-group', 'ditto_list_switch' );
-	register_setting( 'ditto-settings-group', 'ditto_login_image_src' );
-	register_setting( 'ditto-settings-group', 'ditto_hide_me_switch' );
+	register_setting( 'ditto-settings-main-group', 'ditto_owl_switch' );
+	register_setting( 'ditto-settings-main-group', 'ditto_slick_switch' );
+	register_setting( 'ditto-settings-main-group', 'ditto_gutenberg_switch' );
+	register_setting( 'ditto-settings-main-group', 'ditto_custom_css_switch' );
+	register_setting( 'ditto-settings-main-group', 'ditto_custom_js_switch' );
+	register_setting( 'ditto-settings-main-group', 'ditto_materialize_switch' );
+	register_setting( 'ditto-settings-main-group', 'ditto_vimeo_switch' );
+	register_setting( 'ditto-settings-main-group', 'ditto_list_switch' );
+	register_setting( 'ditto-settings-main-group', 'ditto_login_image_src' );
+	register_setting( 'ditto-settings-main-group', 'ditto_duplicator_switch' );
+	register_setting( 'ditto-settings-main-group', 'ditto_duplicator_elements' );
+	register_setting( 'ditto-settings-main-group', 'ditto_hide_me_switch' );
+
+	register_setting( 'ditto-settings-maps-group', 'ditto_google_maps_switch' );
+	register_setting( 'ditto-settings-maps-group', 'ditto_google_maps_api_key' );
+	register_setting( 'ditto-settings-maps-group', 'ditto_google_maps_snazzy_maps' );
 }
 
 function ditto_load_scripts_admin() {
